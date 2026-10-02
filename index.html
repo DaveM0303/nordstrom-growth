@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Nordstrom.com Holiday Growth | Dave Mishal</title>
+  <meta name="description" content="Independent paid-media management for brands already selling on Nordstrom.com. Holiday strategy, sponsored visibility, campaign optimization, and a 20-minute growth review.">
+  <meta name="theme-color" content="#f6f1ea">
+
+  <style>
+    :root{
+      --ink:#151513;
+      --cream:#f7f3ed;
+      --ivory:#efe8de;
+      --paper:#fffdf9;
+      --line:#ddd6cc;
+      --muted:#6d675f;
+      --soft:#8b847b;
+      --champagne:#b79a75;
+      --champagne-deep:#93734f;
+      --burgundy:#672839;
+      --green:#158268;
+      --shadow:0 18px 52px rgba(39,29,20,.08);
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:#fff;
+      font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+      line-height:1.48;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input{font:inherit}
+    .wrap{width:min(calc(100% - 38px),var(--max));margin:auto}
+    .section{padding:90px 0}
+    .kicker{
+      color:var(--champagne-deep);
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:13px;
+    }
+
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{
+      font-family:"Iowan Old Style",Baskerville,Georgia,"Times New Roman",serif;
+      font-weight:500;
+      letter-spacing:-.045em;
+    }
+    h1{font-size:clamp(51px,6.5vw,84px);line-height:.95;margin-bottom:24px}
+    h2{font-size:clamp(37px,4.7vw,57px);line-height:1.02;margin-bottom:18px}
+    h3{font-size:20px;line-height:1.2;letter-spacing:-.02em}
+    p{color:var(--muted)}
+
+    .btn{
+      min-height:52px;
+      padding:0 22px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:7px;
+      font-size:13px;
+      font-weight:800;
+      transition:.18s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 9px 24px rgba(20,16,12,.08)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-light{background:#fff;border:1px solid var(--line)}
+    .btn-burgundy{background:var(--burgundy);color:#fff}
+
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(20,20,20,.055);
+    }
+    .header-inner{
+      height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:21px;
+      letter-spacing:-.02em;
+    }
+    .nav{display:flex;gap:26px;font-size:11px;color:#53504a}
+    .nav a:hover{text-decoration:underline;text-underline-offset:5px}
+
+    /* HERO */
+    .hero{
+      padding:62px 0 54px;
+      background:linear-gradient(180deg,#fff,var(--cream));
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      gap:46px;
+      align-items:center;
+    }
+    .hero-copy p{
+      max-width:680px;
+      color:#4e4943;
+      font-size:20px;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:19px;margin-top:18px;color:#706a63;font-size:11px}
+    .hero-meta span::before{content:"✓";margin-right:7px;color:var(--champagne-deep);font-weight:800}
+
+    .hero-media{
+      position:relative;
+      min-height:515px;
+      overflow:hidden;
+      border-radius:25px;
+      background:var(--ivory);
+      box-shadow:var(--shadow);
+    }
+    .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 55%,rgba(32,23,16,.26));
+    }
+
+    /* METRICS */
+    .metrics{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .metric{text-align:center;padding:31px 24px}
+    .metric+.metric{border-left:1px solid var(--line)}
+    .metric-value{
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:54px;
+      line-height:1;
+      letter-spacing:-.045em;
+    }
+    .metric-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#777168;margin-top:8px}
+    .metric-note{text-align:center;padding:0 14px 16px;color:#98918a;font-size:9px}
+
+    /* PAID MEDIA PLACEMENTS */
+    .placements{background:#fff}
+    .placements-intro{max-width:800px;margin-bottom:32px}
+    .placements-intro p{font-size:17px}
+    .placements-grid{
+      display:grid;
+      grid-template-columns:1.18fr .72fr .78fr;
+      gap:18px;
+      align-items:start;
+    }
+    .placement{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 7px 26px rgba(31,23,16,.035);
+    }
+    .placement-media{overflow:hidden;background:#f4f1ec}
+    .placement.banner .placement-media{aspect-ratio:1.48/1}
+    .placement.editorial .placement-media{aspect-ratio:.82/1}
+    .placement-media img{width:100%;height:100%;object-fit:cover}
+    .placement-copy{padding:17px 18px 19px}
+    .placement-type{
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+      color:#888078;
+    }
+    .placement-copy h3{margin:7px 0 6px}
+    .placement-copy p{font-size:12px;margin:0}
+
+    /* Product-card mockup */
+    .product-card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 7px 26px rgba(31,23,16,.035);
+    }
+    .product-art{
+      min-height:280px;
+      background:linear-gradient(145deg,#f4efe8,#e2d3c1);
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+    .heart{
+      position:absolute;right:15px;top:14px;
+      width:36px;height:36px;border-radius:50%;
+      background:#fff;border:1px solid #ddd7cf;
+      display:grid;place-items:center;font-size:17px;
+    }
+    .bottle{
+      width:98px;height:148px;
+      border-radius:11px 11px 21px 21px;
+      background:linear-gradient(90deg,#d5b376,#f3ddba 47%,#ad844f);
+      box-shadow:0 18px 30px rgba(68,44,24,.14);
+      position:relative;
+    }
+    .bottle::before{
+      content:"";
+      position:absolute;top:-35px;left:25px;width:49px;height:42px;
+      border-radius:9px 9px 4px 4px;
+      background:linear-gradient(#c4a46d,#82613d);
+    }
+    .bottle::after{
+      content:"YOUR BRAND";
+      position:absolute;top:70px;left:0;right:0;
+      text-align:center;
+      color:#5b462d;
+      font-size:8px;font-weight:800;letter-spacing:.08em;
+    }
+    .product-copy{padding:17px 18px 19px}
+    .sponsored{font-size:11px;color:#777;margin-bottom:9px}
+    .brandline{font-weight:800;font-size:13px}
+    .product-name{font-size:15px;margin:3px 0 9px}
+    .price{font-size:18px;font-weight:800}
+    .delivery{font-size:11px;color:var(--green);margin-top:8px}
+    .placement-disclaimer{font-size:10px;color:#8f8981;margin-top:14px}
+
+    /* STRATEGY */
+    .strategy{
+      background:linear-gradient(180deg,var(--cream),#fff);
+    }
+    .strategy-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:48px;
+      align-items:center;
+    }
+    .strategy-image{
+      min-height:520px;
+      overflow:hidden;
+      border-radius:21px;
+      box-shadow:var(--shadow);
+    }
+    .strategy-image img{width:100%;height:100%;object-fit:cover}
+    .strategy-copy p{font-size:17px}
+    .benefits{
+      margin-top:29px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px 26px;
+    }
+    .benefit{display:grid;grid-template-columns:42px 1fr;gap:12px}
+    .benefit-icon{
+      width:42px;height:42px;border-radius:50%;
+      background:var(--ivory);
+      display:grid;place-items:center;
+      color:var(--champagne-deep);
+      font-size:18px;
+    }
+    .benefit strong{display:block;font-size:12px;margin-bottom:4px}
+    .benefit span{font-size:11px;color:var(--muted)}
+
+    /* BOOKING */
+    .booking{
+      background:var(--ivory);
+    }
+    .booking-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:40px;
+      align-items:start;
+    }
+    .booking-copy p{font-size:16px}
+    .booking-points{display:grid;gap:9px;margin-top:22px}
+    .booking-points div{font-size:13px;color:#5c5750}
+    .booking-points div::before{content:"✓";margin-right:9px;color:var(--champagne-deep);font-weight:800}
+
+    .calendar-shell{
+      min-height:500px;
+      overflow:hidden;
+      border-radius:16px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .calendar-placeholder{
+      min-height:500px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:35px;
+      text-align:center;
+    }
+    .calendar-placeholder strong{
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:28px;
+      font-weight:500;
+      margin-bottom:8px;
+    }
+    .calendar-placeholder p{max-width:470px;font-size:13px}
+    .calendar-placeholder code{
+      margin-top:10px;
+      padding:7px 9px;
+      border-radius:5px;
+      background:#f3efe9;
+      font-size:11px;
+    }
+    .calendar-shell iframe{width:100%!important;min-height:620px!important;border:0!important;display:block}
+
+    /* ABOUT */
+    .about{background:#fff}
+    .about-grid{
+      display:grid;
+      grid-template-columns:280px 1fr 280px;
+      gap:38px;
+      align-items:center;
+    }
+    .dave-frame{
+      overflow:hidden;
+      border-radius:18px;
+      background:#e7ddd1;
+      box-shadow:var(--shadow);
+    }
+    .dave-frame img{width:100%;aspect-ratio:.9/1;object-fit:cover}
+    .about-copy p{font-size:16px}
+    .operator-row{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:7px;
+      margin-top:23px;
+    }
+    .operator-row div{
+      padding:10px 6px;
+      border:1px solid var(--line);
+      border-radius:7px;
+      text-align:center;
+      font-size:8px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+    .operator-row .active{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
+    .why-card{
+      padding:27px 24px;
+      border-left:1px solid var(--line);
+    }
+    .why-card .quote{
+      color:#d8c5ab;
+      font-family:Georgia,serif;
+      font-size:56px;
+      line-height:.7;
+    }
+    .why-card p{
+      margin-top:15px;
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:19px;
+      color:#4f4942;
+    }
+
+    .final{
+      padding:74px 0;
+      text-align:center;
+      background:linear-gradient(135deg,#eee5d9,#faf7f2);
+    }
+    .final p{max-width:640px;margin:0 auto 24px;font-size:17px}
+    .footer{
+      padding:21px 0 28px;
+      text-align:center;
+      color:#8b857e;
+      font-size:9px;
+      border-top:1px solid #e6dfd7;
+    }
+
+    .mobile-book{
+      display:none;
+      position:fixed;
+      left:12px;right:12px;
+      bottom:calc(12px + env(safe-area-inset-bottom));
+      z-index:100;
+      padding:15px;
+      border-radius:7px;
+      background:var(--burgundy);
+      color:#fff;
+      text-align:center;
+      font-weight:800;
+      box-shadow:0 14px 35px rgba(75,34,44,.24);
+    }
+
+    @media(max-width:920px){
+      .nav{display:none}
+      .hero-grid,.strategy-grid,.booking-grid{grid-template-columns:1fr}
+      .placements-grid{grid-template-columns:1fr 1fr}
+      .placement.banner{grid-column:1/-1}
+      .about-grid{grid-template-columns:240px 1fr}
+      .why-card{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
+    }
+
+    @media(max-width:560px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}
+      .site-header .btn{display:none}
+      .header-inner{height:64px}
+      h1{font-size:48px}
+      h2{font-size:37px}
+      .hero{padding-top:42px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .hero-media{min-height:430px}
+      .metrics-grid{grid-template-columns:1fr}
+      .metric+.metric{border-left:0;border-top:1px solid var(--line)}
+      .placements-grid{grid-template-columns:1fr}
+      .placement.banner{grid-column:auto}
+      .benefits{grid-template-columns:1fr}
+      .strategy-image{min-height:390px}
+      .about-grid{grid-template-columns:1fr}
+      .dave-frame{max-width:260px}
+      .operator-row{grid-template-columns:repeat(2,1fr)}
+      .calendar-shell,.calendar-placeholder{min-height:430px}
+      .mobile-book{display:block}
+      body{padding-bottom:76px}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">DAVE MISHAL</div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#media">Retail Media</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#results">Results</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="btn btn-dark" href="#book">Book a 20-Min Review →</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">Nordstrom.com Paid Media · Holiday 2026</div>
+        <h1>Turn holiday demand into real growth.</h1>
+        <p>Strategic paid-media management for brands already selling on Nordstrom.com — focused on visibility, product opportunity, disciplined spend, and active optimization.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#book">Book My 20-Min Growth Review →</a>
+          <a class="btn btn-light" href="#media">See How It Works</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Month-to-month</span>
+          <span>No long-term contract</span>
+          <span>Personally managed</span>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="assets/hero-holiday.webp" alt="Premium holiday ecommerce still life">
+      </div>
+    </div>
+  </section>
+
+  <section class="metrics" id="results">
+    <div class="wrap">
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-value">$350K</div>
+          <div class="metric-label">Last holiday media managed</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">4.0×</div>
+          <div class="metric-label">Historical ROAS</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">$500K</div>
+          <div class="metric-label">Current program</div>
+        </div>
+      </div>
+      <div class="metric-note">Historical performance is provided for context only and is not a guarantee of future results.</div>
+    </div>
+  </section>
+
+  <section class="section placements" id="media">
+    <div class="wrap">
+      <div class="placements-intro">
+        <div class="kicker">How Your Brand Can Show Up</div>
+        <h2>Retail media that feels native to the shopping journey.</h2>
+        <p>These are original illustrative examples designed to make the opportunity tangible. They are not actual Nordstrom placements or client campaigns.</p>
+      </div>
+
+      <div class="placements-grid">
+        <article class="placement banner">
+          <div class="placement-media">
+            <img src="assets/sponsored-banner.webp" alt="Illustrative sponsored banner">
+          </div>
+          <div class="placement-copy">
+            <div class="placement-type">Illustrative example</div>
+            <h3>Sponsored Banner</h3>
+            <p>Support a seasonal collection, hero-product family, or premium holiday story with stronger visibility.</p>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-art">
+            <div class="heart">♡</div>
+            <div class="bottle"></div>
+          </div>
+          <div class="product-copy">
+            <div class="sponsored">Sponsored</div>
+            <div class="brandline">YOUR BRAND</div>
+            <div class="product-name">Holiday Hero Product</div>
+            <div class="price">$128</div>
+            <div class="delivery">Holiday-ready inventory</div>
+          </div>
+        </article>
+
+        <article class="placement editorial">
+          <div class="placement-media">
+            <img src="assets/editorial-placement.webp" alt="Illustrative editorial retail-media placement">
+          </div>
+          <div class="placement-copy">
+            <div class="placement-type">Illustrative example</div>
+            <h3>Editorial / Category Placement</h3>
+            <p>Reach high-intent shoppers with premium creative in a relevant shopping context.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="placement-disclaimer">Nordstrom is a trademark of its respective owner. No affiliation, sponsorship, or endorsement is implied.</div>
+    </div>
+  </section>
+
+  <section class="section strategy" id="strategy">
+    <div class="wrap strategy-grid">
+      <div class="strategy-image">
+        <img src="assets/strategy-lifestyle.webp" alt="Premium fashion ecommerce lifestyle image">
+      </div>
+
+      <div class="strategy-copy">
+        <div class="kicker">A Strategic, Hands-On Approach</div>
+        <h2>From strategy to measurable results.</h2>
+        <p>I manage retail media through the operating realities around it — product demand, inventory, spend efficiency, revenue opportunity, and margin — rather than treating paid media as a standalone dashboard.</p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="benefit-icon">↗</div>
+            <div><strong>Data-Driven Strategy</strong><span>Find the right opportunities for your assortment.</span></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">◎</div>
+            <div><strong>Campaign Management</strong><span>Launch, monitor and actively optimize campaigns.</span></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">◇</div>
+            <div><strong>Assortment & Inventory</strong><span>Align media with in-stock, high-opportunity products.</span></div>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">⌁</div>
+            <div><strong>Ongoing Optimization</strong><span>Focus on profitable opportunity, not just clicks.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section booking" id="book">
+    <div class="wrap booking-grid">
+      <div class="booking-copy">
+        <div class="kicker">Let's Find a Time</div>
+        <h2>Book a 20-minute Nordstrom Growth Review.</h2>
+        <p>We'll discuss your brand, current Nordstrom.com performance, assortment, and the opportunities I would look at first for Holiday 2026.</p>
+
+        <div class="booking-points">
+          <div>20-minute Google Meet</div>
+          <div>Monday–Friday, 9 AM–5 PM Pacific</div>
+          <div>10-minute buffer between calls</div>
+          <div>No long-term commitment</div>
+        </div>
+      </div>
+
+      <div class="calendar-shell" id="google-calendar-booking">
+        <!--
+          GOOGLE CALENDAR APPOINTMENT SCHEDULE
+
+          Replace the placeholder below with the exact "Inline booking page"
+          embed code copied from Google Calendar:
+
+          Google Calendar > Booking pages > your schedule > Options
+          > Sharing options > Website embed > A single booking page
+          > Inline booking page > Copy code.
+
+          Google Calendar itself will block existing busy meetings.
+        -->
+        <div class="calendar-placeholder" id="booking-placeholder">
+          <strong>Connect your Google Calendar booking page</strong>
+          <p>This layout is ready for Google's official inline Appointment Schedule embed. Once connected, prospects will see your live availability here and existing busy meetings will automatically be unavailable.</p>
+          <code>PASTE GOOGLE INLINE BOOKING EMBED HERE</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="dave-frame">
+        <img src="assets/dave.webp" alt="Dave Mishal">
+      </div>
+
+      <div class="about-copy">
+        <div class="kicker">Dave Mishal</div>
+        <h2>Operator first. Media manager second.</h2>
+        <p>I run retail, ecommerce and marketplace operations, so I look at paid media through the business around it — not just through an advertising dashboard.</p>
+
+        <div class="operator-row">
+          <div>Assortment</div>
+          <div>Inventory</div>
+          <div class="active">Media</div>
+          <div>Revenue</div>
+          <div>Margin</div>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="quote">“</div>
+        <p>The advantage is connecting media decisions to the operating reality behind the products.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="kicker">Holiday 2026</div>
+      <h2>Ready to grow your Nordstrom.com business?</h2>
+      <p>I'm taking on a limited number of additional holiday accounts and managing them personally.</p>
+      <a class="btn btn-dark" href="#book">Book My 20-Min Growth Review →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    Independent paid-media management by Dave Mishal. Nordstrom is a trademark of its respective owner. No affiliation, sponsorship, or endorsement by Nordstrom is implied. Illustrative placement examples are original mockups only.
+  </div>
+</footer>
+
+<a class="mobile-book" href="#book">Book 20-Min Review →</a>
+
+<script>
+  // Smooth anchor behavior is native via CSS; this script only hides the mobile CTA near the booking section.
+  (() => {
+    const mobile = document.querySelector('.mobile-book');
+    const booking = document.getElementById('book');
+    if (!mobile || !booking || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        mobile.style.opacity = entry.isIntersecting ? '0' : '1';
+        mobile.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+      });
+    }, { threshold: .15 });
+
+    observer.observe(booking);
+  })();
+</script>
+</body>
+</html>
