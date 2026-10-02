@@ -104,37 +104,39 @@
     .site-header .btn{white-space:nowrap;padding:0 16px;flex:0 0 auto}
 
     /* HERO */
-    .hero{
-      padding:28px 0 20px;
-      background:linear-gradient(180deg,#fff,var(--cream));
+    .hero{padding:0 0 8px;background:#fff}
+    .hero-frame{
+      position:relative;
+      min-height:640px;
+      overflow:hidden;
+      background:#f6f1ea;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-      grid-template-areas:"lead media" "rest media";
-      gap:18px 40px;
-      align-items:center;
+    .hero-frame img{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      object-fit:cover;
+      object-position:72% center;
     }
-    .hero-lead{grid-area:lead}
-    .hero-rest{grid-area:rest}
-    .hero-media{grid-area:media}
-    .hero-rest p{
-      max-width:540px;
-      color:#4e4943;
+    .hero-scrim{
+      position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(255,252,248,.94) 0%,rgba(255,252,248,.82) 34%,rgba(255,252,248,.28) 58%,rgba(255,252,248,0) 74%);
+    }
+    .hero-copy{
+      position:relative;
+      z-index:1;
+      width:min(560px,calc(100% - 64px));
+      padding:72px 0 64px;
+    }
+    .hero-copy h1{max-width:11ch}
+    .hero-copy p{
+      max-width:460px;
+      color:#3f3b36;
       font-size:17px;
       line-height:1.5;
       margin-bottom:0;
     }
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-    .hero-trust{margin-top:14px;color:#706a63;font-size:12px}
-
-    .hero-media{
-      border-radius:22px;
-      background:var(--ivory);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .hero-media img{width:100%;height:auto;display:block}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .hero-trust{margin-top:14px;color:#5c564f;font-size:12px}
 
     /* METRICS */
     .metrics{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -416,7 +418,8 @@
     }
 
     @media(max-width:920px){
-      .hero-grid{grid-template-columns:1fr;grid-template-areas:"lead" "media" "rest";gap:16px}
+      .hero-frame{min-height:560px}
+      .hero-copy{width:min(480px,calc(100% - 40px));padding:48px 0 40px}
       .strategy-grid,.booking-grid{grid-template-columns:1fr}
       .placements-grid{grid-template-columns:1fr 1fr}
       .placement.banner{grid-column:1/-1}
@@ -431,7 +434,12 @@
       h1{font-size:34px;line-height:1.05}
       .section{padding:36px 0}
       h2{font-size:37px}
-      .hero{padding-top:28px}
+      .hero-frame{min-height:760px}
+      .hero-frame img{object-position:right 22%}
+      .hero-scrim{background:linear-gradient(180deg,rgba(255,252,248,.96) 0%,rgba(255,252,248,.9) 34%,rgba(255,252,248,.22) 52%,rgba(255,252,248,0) 64%)}
+      .hero-copy{width:min(calc(100% - 28px),520px);padding:28px 0 24px}
+      .hero-copy h1{max-width:none}
+      .hero-copy p{font-size:15px}
       .hero-actions{flex-direction:column}
       .hero-actions .btn{width:100%}
       .metrics-grid{grid-template-columns:1fr}
@@ -467,15 +475,12 @@
 
 <main>
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-lead">
+    <div class="hero-frame">
+      <img src="assets/hero-overlay.webp" alt="Woman in a cream knit beside stacked holiday gifts">
+      <div class="hero-scrim"></div>
+      <div class="wrap hero-copy">
         <div class="kicker">Nordstrom.com Paid Media · Holiday 2026</div>
         <h1>Capture more peak-season sales. Scale before the opportunity passes.</h1>
-      </div>
-      <div class="hero-media">
-        <img src="assets/hero-lifestyle.webp" alt="Editorial portrait with fragrance, loafers, a handbag, and a rising performance line">
-      </div>
-      <div class="hero-rest">
         <p>I manage Nordstrom.com paid media with an operator’s approach—connecting assortment, inventory, KPIs, bidding strategy and continuous optimization to put more budget behind the products most likely to convert and improve return on ad spend.</p>
         <div class="hero-actions">
           <a class="btn btn-dark" href="https://calendar.app.google/GBC3Sg4o9omE3UDp7" target="_blank" rel="noopener">Book My 20-Min Holiday Growth Review →</a>
