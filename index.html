@@ -434,12 +434,13 @@
       h1{font-size:34px;line-height:1.05}
       .section{padding:36px 0}
       h2{font-size:37px}
-      .hero-frame{min-height:760px}
-      .hero-frame img{object-position:right 22%}
-      .hero-scrim{background:linear-gradient(180deg,rgba(255,252,248,.96) 0%,rgba(255,252,248,.9) 34%,rgba(255,252,248,.22) 52%,rgba(255,252,248,0) 64%)}
-      .hero-copy{width:min(calc(100% - 28px),520px);padding:28px 0 24px}
+      .hero-frame{min-height:0;display:flex;flex-direction:column}
+      .hero-frame img{position:relative;inset:auto;width:100%;height:auto;max-height:none;object-fit:cover;object-position:72% 30%;aspect-ratio:4/5}
+      .hero-scrim{display:none}
+      .hero-copy{width:min(calc(100% - 8px),520px);padding:22px 0 8px;background:#fff}
       .hero-copy h1{max-width:none}
-      .hero-copy p{font-size:15px}
+      .hero-copy p{font-size:16px;color:#4e4943}
+      .hero-trust{color:#706a63}
       .hero-actions{flex-direction:column}
       .hero-actions .btn{width:100%}
       .metrics-grid{grid-template-columns:1fr}
