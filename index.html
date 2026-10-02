@@ -127,7 +127,7 @@
       background:var(--ivory);
       box-shadow:var(--shadow);
     }
-    .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-message{position:absolute;z-index:3;left:22px;bottom:22px;max-width:325px;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-radius:10px;padding:17px 18px;box-shadow:0 10px 35px rgba(26,20,14,.08)}.hero-message strong{display:block;font-family:"Iowan Old Style",Baskerville,Georgia,serif;font-size:24px;font-weight:500;line-height:1.05;margin-bottom:6px}.hero-message span{font-size:11px;color:#675f57}
     .hero-media::after{
       content:"";
       position:absolute;
@@ -170,6 +170,10 @@
     .placement.banner .placement-media{aspect-ratio:1.48/1}
     .placement.editorial .placement-media{aspect-ratio:.82/1}
     .placement-media img{width:100%;height:100%;object-fit:cover}
+    .placement.banner .placement-media,
+    .placement.editorial .placement-media{background:#fffdf9}
+    .placement.banner .placement-media img,
+    .placement.editorial .placement-media img{object-fit:contain}
     .placement-copy{padding:17px 18px 19px}
     .placement-type{
       font-size:9px;
@@ -191,11 +195,12 @@
     }
     .product-art{
       min-height:280px;
-      background:linear-gradient(145deg,#f4efe8,#e2d3c1);
+      background:#fffdf9;
       position:relative;
       display:grid;
       place-items:center;
     }
+    .product-art img{width:78%;height:250px;object-fit:contain}
     .heart{
       position:absolute;right:15px;top:14px;
       width:36px;height:36px;border-radius:50%;
@@ -247,7 +252,7 @@
       box-shadow:var(--shadow);
     }
     .strategy-image img{width:100%;height:100%;object-fit:cover}
-    .strategy-copy p{font-size:17px}
+    .strategy-copy p{font-size:18px}
     .benefits{
       margin-top:29px;
       display:grid;
@@ -262,8 +267,8 @@
       color:var(--champagne-deep);
       font-size:18px;
     }
-    .benefit strong{display:block;font-size:12px;margin-bottom:4px}
-    .benefit span{font-size:11px;color:var(--muted)}
+    .benefit strong{display:block;font-size:14px;margin-bottom:4px}
+    .benefit span{font-size:13px;color:var(--muted)}
 
     /* BOOKING */
     .booking{
@@ -278,7 +283,7 @@
     .booking-copy p{font-size:16px}
     .booking-points{display:grid;gap:9px;margin-top:22px}
     .booking-points div{font-size:13px;color:#5c5750}
-    .booking-points div::before{content:"✓";margin-right:9px;color:var(--champagne-deep);font-weight:800}
+    .booking-points div{padding-left:0}
 
     .calendar-shell{
       min-height:500px;
@@ -419,7 +424,7 @@
       .benefits{grid-template-columns:1fr}
       .strategy-image{min-height:390px}
       .about-grid{grid-template-columns:1fr}
-      .dave-frame{max-width:260px}
+      .dave-frame{max-width:260px;margin-inline:auto}
       .operator-row{grid-template-columns:repeat(2,1fr)}
       .calendar-shell,.calendar-placeholder{min-height:430px}
       .mobile-book{display:block}
@@ -464,6 +469,7 @@
 
       <div class="hero-media">
         <img src="assets/hero-holiday.webp" alt="Premium holiday ecommerce still life">
+        <div class="hero-message"><strong>The right products. The right visibility. The right moment.</strong><span>Holiday media managed around assortment, inventory and performance — not just clicks.</span></div>
       </div>
     </div>
   </section>
@@ -511,7 +517,7 @@
         <article class="product-card">
           <div class="product-art">
             <div class="heart">♡</div>
-            <div class="bottle"></div>
+            <img src="assets/sponsored-product.webp" alt="Illustrative fragrance product">
           </div>
           <div class="product-copy">
             <div class="sponsored">Sponsored</div>
@@ -524,7 +530,7 @@
 
         <article class="placement editorial">
           <div class="placement-media">
-            <img src="assets/editorial-placement.webp" alt="Illustrative editorial retail-media placement">
+            <img src="assets/sponsored-footwear.webp" alt="Illustrative footwear product">
           </div>
           <div class="placement-copy">
             <div class="placement-type">Illustrative example</div>
@@ -672,3 +678,5 @@
 </script>
 </body>
 </html>
+
+<style>@media(max-width:850px){.portrait,.dave-card{margin-left:auto!important;margin-right:auto!important}.portrait{width:min(100%,420px)!important}}</style>
