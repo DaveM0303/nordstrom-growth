@@ -286,38 +286,40 @@
     .booking-points div{padding-left:0}
 
     .calendar-shell{
-      min-height:500px;
       overflow:hidden;
       border-radius:16px;
-      background:#fff;
+      background:#fffdf9;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
-      position:relative;
     }
-    .calendar-placeholder{
-      min-height:500px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      padding:35px;
-      text-align:center;
+    .calendar-card{
+      padding:36px 34px 32px;
     }
-    .calendar-placeholder strong{
+    .calendar-card strong{
+      display:block;
       font-family:"Iowan Old Style",Baskerville,Georgia,serif;
-      font-size:28px;
+      font-size:clamp(28px,3vw,36px);
       font-weight:500;
-      margin-bottom:8px;
+      letter-spacing:-.03em;
+      line-height:1.05;
+      margin:0 0 12px;
     }
-    .calendar-placeholder p{max-width:470px;font-size:13px}
-    .calendar-placeholder code{
-      margin-top:10px;
-      padding:7px 9px;
-      border-radius:5px;
-      background:#f3efe9;
-      font-size:11px;
+    .calendar-card p{max-width:420px;font-size:15px;margin-bottom:22px}
+    .calendar-times{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:26px;
     }
-    .calendar-shell iframe{width:100%!important;min-height:620px!important;border:0!important;display:block}
+    .calendar-times span{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      color:#5c5750;
+      font-size:12px;
+      font-weight:700;
+    }
 
     /* ABOUT */
     .about{background:#fff}
@@ -426,7 +428,8 @@
       .about-grid{grid-template-columns:1fr}
       .dave-frame{max-width:260px;margin-inline:auto}
       .operator-row{grid-template-columns:repeat(2,1fr)}
-      .calendar-shell,.calendar-placeholder{min-height:430px}
+      .calendar-card{padding:28px 22px 26px}
+      .calendar-card .btn{width:100%}
       .mobile-book{display:block}
       body{padding-bottom:76px}
     }
@@ -593,19 +596,17 @@
       </div>
 
       <div class="calendar-shell" id="google-calendar-booking">
-        <!--
-          GOOGLE CALENDAR APPOINTMENT SCHEDULE
-
-          Replace the placeholder below with the exact "Inline booking page"
-          embed code copied from Google Calendar:
-
-          Google Calendar > Booking pages > your schedule > Options
-          > Sharing options > Website embed > A single booking page
-          > Inline booking page > Copy code.
-
-          Google Calendar itself will block existing busy meetings.
-        -->
-        <iframe src="https://calendar.app.google/GBC3Sg4o9omE3UDp7" title="Book a Nordstrom Growth Review"></iframe>
+        <div class="calendar-card">
+          <div class="kicker">Open times</div>
+          <strong>Pick a date and time.</strong>
+          <p>The booking page opens in a new tab, so the calendar stays still on a phone. Weekdays, Pacific time. A Google Meet link is added after you book.</p>
+          <div class="calendar-times">
+            <span>20 minutes</span>
+            <span>Mon–Fri</span>
+            <span>9 AM–5 PM PT</span>
+          </div>
+          <a class="btn btn-dark" href="https://calendar.app.google/GBC3Sg4o9omE3UDp7" target="_blank" rel="noopener">See open times →</a>
+        </div>
       </div>
     </div>
   </section>
