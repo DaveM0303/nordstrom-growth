@@ -337,11 +337,45 @@
     }
     .dave-frame{
       overflow:hidden;
-      border-radius:18px;
-      background:#e7ddd1;
+      border-radius:0;
+      background:#f3eee6;
       box-shadow:var(--shadow);
     }
-    .dave-frame img{width:100%;aspect-ratio:.9/1;object-fit:cover}
+    .dave-frame img{width:100%;height:auto;object-fit:contain;object-position:center top}
+
+    .working{background:var(--cream)}
+    .working h2{max-width:14ch}
+    .work-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .work-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-top:2px solid var(--champagne);
+      padding:22px 20px 20px;
+    }
+    .work-card h3{
+      margin:0 0 10px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .work-card p{margin:0;font-size:15px;color:#4f4942}
+    .work-close{max-width:620px;margin:26px 0 0}
+    .work-close strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--ink);
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:26px;
+      font-weight:500;
+      letter-spacing:-.03em;
+      line-height:1.15;
+    }
+    .work-close p{margin:0;font-size:16px}
     .about-copy p{font-size:16px}
     .about-direct{margin-top:12px}
     .about-quiet{
@@ -427,6 +461,7 @@
       .strategy-image img{max-height:420px}
       .placements-grid{grid-template-columns:1fr 1fr}
       .about-grid{grid-template-columns:240px 1fr}
+      .work-grid{grid-template-columns:1fr}
       .why-card{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
     }
 
@@ -454,7 +489,11 @@
       .benefits{grid-template-columns:1fr}
       .strategy-image{min-height:0}
       .about-grid{grid-template-columns:1fr}
-      .dave-frame{max-width:260px;margin-inline:auto}
+      .dave-frame{max-width:280px;margin-inline:auto;border-radius:0}
+      .work-grid{grid-template-columns:1fr}
+      .working h2{max-width:none}
+      .work-close{margin-top:18px}
+      .work-close strong{font-size:22px}
       .operator-row{grid-template-columns:repeat(2,1fr)}
       .calendar-card{padding:28px 22px 26px}
       .calendar-card .btn{width:100%}
@@ -605,8 +644,8 @@
 
       <div class="about-copy">
         <div class="kicker">Dave Mishal</div>
-        <h2>Operator first. Media manager second.</h2>
-        <p>I run retail, ecommerce and marketplace operations, so I look at paid media through the business around it — not just through an advertising dashboard.</p>
+        <h2>Paid media built to scale profitable growth.</h2>
+        <p>I manage Nordstrom.com paid media with an operational and analytical mindset—connecting assortment, inventory, KPIs, bidding strategy and profitability so budget moves toward the products and campaigns with the strongest opportunity to scale.</p>
         <p class="about-direct">You work directly with me.</p>
         <p class="about-quiet">Strategy · Campaign Management · Optimization · Performance Review</p>
 
@@ -622,6 +661,31 @@
       <div class="why-card">
         <div class="quote">“</div>
         <p>The advantage is connecting media decisions to the operating reality behind the products.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section working" id="working">
+    <div class="wrap">
+      <h2>What working with me looks like.</h2>
+      <div class="work-grid">
+        <article class="work-card">
+          <h3>Direct senior-level management</h3>
+          <p>You work directly with me—not through a junior account manager or layered agency team.</p>
+        </article>
+        <article class="work-card">
+          <h3>Active optimization</h3>
+          <p>Bids, budgets and product priorities are adjusted as performance, inventory and demand change.</p>
+        </article>
+        <article class="work-card">
+          <h3>Commercial thinking</h3>
+          <p>I look beyond clicks and impressions. Assortment, inventory, revenue, margin and ROAS all influence where budget goes.</p>
+        </article>
+      </div>
+      <div class="work-close">
+        <strong>No vanity metrics. No set-it-and-forget-it media.</strong>
+        <p>Just disciplined decisions around where to scale, where to optimize and where to stop spending.</p>
       </div>
     </div>
   </section>
