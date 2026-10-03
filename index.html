@@ -158,7 +158,7 @@
     .placements-intro p{font-size:17px}
     .placements-grid{
       display:grid;
-      grid-template-columns:1.18fr .72fr .78fr;
+      grid-template-columns:1.15fr .85fr;
       gap:18px;
       align-items:start;
     }
@@ -244,34 +244,37 @@
     }
     .strategy-grid{
       display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:48px;
-      align-items:center;
+      grid-template-columns:.72fr 1.28fr;
+      gap:40px;
+      align-items:start;
     }
     .strategy-image{
       min-height:0;
+      align-self:start;
       overflow:hidden;
       border-radius:21px;
       box-shadow:var(--shadow);
     }
-    .strategy-image img{width:100%;height:100%;object-fit:cover}
-    .strategy-copy p{font-size:18px}
-    .benefits{
-      margin-top:29px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px 26px;
-    }
-    .benefit{display:grid;grid-template-columns:42px 1fr;gap:12px}
-    .benefit-icon{
-      width:42px;height:42px;border-radius:50%;
-      background:var(--ivory);
-      display:grid;place-items:center;
+    .strategy-image img{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center}
+    .strategy-copy p{font-size:17px;line-height:1.5}
+    .principles{margin-top:26px;display:grid;gap:18px}
+    .principle{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+    .principle-num{
       color:var(--champagne-deep);
-      font-size:18px;
+      font-size:13px;font-weight:800;letter-spacing:.06em;padding-top:2px;
     }
-    .benefit strong{display:block;font-size:14px;margin-bottom:4px}
-    .benefit span{font-size:13px;color:var(--muted)}
+    .principle strong{
+      display:block;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;
+    }
+    .principle span{display:block;font-size:15px;line-height:1.45;color:var(--muted)}
+    .framework-close{
+      margin:26px 0 0;
+      color:var(--ink);
+      font-family:"Iowan Old Style",Baskerville,Georgia,serif;
+      font-size:clamp(22px,2.4vw,28px);
+      line-height:1.25;
+      letter-spacing:-.03em;
+    }
 
     /* BOOKING */
     .booking{
@@ -421,8 +424,8 @@
       .hero-frame{min-height:560px}
       .hero-copy{width:min(480px,calc(100% - 40px));padding:48px 0 40px}
       .strategy-grid,.booking-grid{grid-template-columns:1fr}
+      .strategy-image img{max-height:420px}
       .placements-grid{grid-template-columns:1fr 1fr}
-      .placement.banner{grid-column:1/-1}
       .about-grid{grid-template-columns:240px 1fr}
       .why-card{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
     }
@@ -446,7 +449,8 @@
       .metrics-grid{grid-template-columns:1fr}
       .metric+.metric{border-left:0;border-top:1px solid var(--line)}
       .placements-grid{grid-template-columns:1fr}
-      .placement.banner{grid-column:auto}
+      #strategy,#book,#about,#media{scroll-margin-top:78px}
+      body{padding-bottom:108px}
       .benefits{grid-template-columns:1fr}
       .strategy-image{min-height:0}
       .about-grid{grid-template-columns:1fr}
@@ -454,8 +458,8 @@
       .operator-row{grid-template-columns:repeat(2,1fr)}
       .calendar-card{padding:28px 22px 26px}
       .calendar-card .btn{width:100%}
-      .mobile-book{display:block}
-      body{padding-bottom:76px}
+      .mobile-book{display:block;opacity:0;pointer-events:none}
+      body{padding-bottom:108px}
     }
   </style>
 </head>
@@ -485,7 +489,7 @@
         <p>I manage Nordstrom.com paid media with an operator’s approach—connecting assortment, inventory, KPIs, bidding strategy and continuous optimization to put more budget behind the products most likely to convert and improve return on ad spend.</p>
         <div class="hero-actions">
           <a class="btn btn-dark" href="https://calendar.app.google/GBC3Sg4o9omE3UDp7" target="_blank" rel="noopener">Book My 20-Min Holiday Growth Review →</a>
-          <a class="btn btn-light" href="#media">See How I Manage Retail Media</a>
+          <a class="btn btn-light" href="#strategy">See My Growth Framework →</a>
         </div>
         <div class="hero-trust">Hands-on · Month-to-month · You work directly with me</div>
       </div>
@@ -504,8 +508,8 @@
           <div class="metric-label">Historical ROAS</div>
         </div>
         <div class="metric">
-          <div class="metric-value" data-value="500" data-prefix="$" data-suffix="K">$0K</div>
-          <div class="metric-label">Current program</div>
+          <div class="metric-value" data-value="1.4" data-decimals="1" data-prefix="$" data-suffix="M">$0.0M</div>
+          <div class="metric-label">Revenue generated</div>
         </div>
       </div>
       <div class="metric-note">Historical performance is provided for context only and is not a guarantee of future results.</div>
@@ -546,16 +550,6 @@
           </div>
         </article>
 
-        <article class="placement editorial">
-          <div class="placement-media">
-            <img src="assets/sponsored-footwear.webp" alt="Illustrative footwear product">
-          </div>
-          <div class="placement-copy">
-            <div class="placement-type">Illustrative example</div>
-            <h3>Editorial / Category Placement</h3>
-            <p>Reach high-intent shoppers with premium creative in a relevant shopping context.</p>
-          </div>
-        </article>
       </div>
 
       <div class="placement-disclaimer">Nordstrom is a trademark of its respective owner. No affiliation, sponsorship, or endorsement is implied.</div>
@@ -569,28 +563,19 @@
       </div>
 
       <div class="strategy-copy">
-        <div class="kicker">A Strategic, Hands-On Approach</div>
-        <h2>From strategy to measurable results.</h2>
-        <p>Paid media without the operating context can waste money. I connect assortment, inventory, and performance before increasing spend.</p>
+        <div class="kicker">How I Manage Your Media Dollars</div>
+        <h2>I don’t start with ad spend. I start with the business behind it.</h2>
+        <p>Every dollar has to earn the next one. Before scaling spend, I look at what is selling, what can support more demand, what the economics allow, and what the performance data is actually telling us.</p>
 
-        <div class="benefits">
-          <div class="benefit">
-            <div class="benefit-icon">↗</div>
-            <div><strong>Data-Driven Strategy</strong><span>Understand the opportunity before increasing spend.</span></div>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon">◇</div>
-            <div><strong>Assortment &amp; Inventory</strong><span>Put budget behind products capable of supporting additional demand.</span></div>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon">◎</div>
-            <div><strong>Bidding &amp; Campaign Management</strong><span>Actively manage bids, budgets and visibility as performance changes.</span></div>
-          </div>
-          <div class="benefit">
-            <div class="benefit-icon">⌁</div>
-            <div><strong>Ongoing Optimization</strong><span>Move spend toward stronger opportunities and protect return on ad spend.</span></div>
-          </div>
+        <div class="principles">
+          <div class="principle"><div class="principle-num">01</div><div><strong>Assortment</strong><span>Identify hero SKUs, seasonal opportunities and products with the strongest potential to absorb incremental demand.</span></div></div>
+          <div class="principle"><div class="principle-num">02</div><div><strong>Inventory</strong><span>Check inventory depth and replenishment before increasing spend. There is little value in scaling a product that is about to stock out.</span></div></div>
+          <div class="principle"><div class="principle-num">03</div><div><strong>KPI Targets</strong><span>Track ROAS, conversion rate, CPC, CTR, AOV and product-level economics so every campaign has a clear performance threshold.</span></div></div>
+          <div class="principle"><div class="principle-num">04</div><div><strong>Bidding &amp; Budget</strong><span>Adjust bids and budget based on demand, conversion, inventory and profitability—not simply traffic volume.</span></div></div>
+          <div class="principle"><div class="principle-num">05</div><div><strong>Scale Winners</strong><span>Increase investment behind products proving they can convert while monitoring inventory and diminishing returns.</span></div></div>
+          <div class="principle"><div class="principle-num">06</div><div><strong>Cut Wasted Spend</strong><span>Reduce, pause or rebuild campaigns and products that consistently miss their performance thresholds.</span></div></div>
         </div>
+        <p class="framework-close">Scale what works.<br>Fix what can improve.<br>Stop funding what doesn’t.</p>
       </div>
     </div>
   </section>
@@ -600,26 +585,12 @@
       <div class="booking-copy">
         <div class="kicker">Let's Find a Time</div>
         <h2>Book a 20-minute Nordstrom Growth Review.</h2>
-        <p>We'll discuss your brand, current Nordstrom.com performance, assortment, and the opportunities I would look at first for Holiday 2026.</p>
-
-        <div class="booking-points">
-          <div>20-minute Google Meet</div>
-          <div>Monday–Friday, 9 AM–5 PM Pacific</div>
-          <div>Existing meetings stay closed</div>
-          <div>No long-term commitment</div>
-        </div>
+        <p>We'll look at your current Nordstrom.com business, assortment and paid-media opportunity and identify where I would focus first.</p>
       </div>
 
       <div class="calendar-shell" id="google-calendar-booking">
         <div class="calendar-card">
-          <div class="kicker">Open times</div>
           <strong>Pick a date and time.</strong>
-          <p>Weekdays, Pacific time. A Google Meet link is added after you book.</p>
-          <div class="calendar-times">
-            <span>20 minutes</span>
-            <span>Mon–Fri</span>
-            <span>9 AM–5 PM PT</span>
-          </div>
           <a class="btn btn-dark" href="https://calendar.app.google/GBC3Sg4o9omE3UDp7" target="_blank" rel="noopener">Book My 20-Min Holiday Growth Review →</a>
         </div>
       </div>
@@ -678,16 +649,23 @@
   (() => {
     const mobile = document.querySelector('.mobile-book');
     const booking = document.getElementById('book');
-    if (!mobile || !booking || !('IntersectionObserver' in window)) return;
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        mobile.style.opacity = entry.isIntersecting ? '0' : '1';
-        mobile.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
-      });
-    }, { threshold: .15 });
-
-    observer.observe(booking);
+    const hero = document.querySelector('.hero');
+    if (!mobile || !booking || !hero || !('IntersectionObserver' in window)) return;
+    let heroClear = false;
+    let bookingOn = false;
+    const paint = () => {
+      const show = heroClear && !bookingOn;
+      mobile.style.opacity = show ? '1' : '0';
+      mobile.style.pointerEvents = show ? 'auto' : 'none';
+    };
+    new IntersectionObserver(entries => {
+      heroClear = !entries[0].isIntersecting;
+      paint();
+    }, { threshold: 0.05 }).observe(hero);
+    new IntersectionObserver(entries => {
+      bookingOn = entries[0].isIntersecting;
+      paint();
+    }, { threshold: .15 }).observe(booking);
   })();
 
   (() => {
