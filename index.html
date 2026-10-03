@@ -337,11 +337,12 @@
     }
     .dave-frame{
       overflow:hidden;
-      border-radius:0;
-      background:#f3eee6;
+      border-radius:18px;
+      background:#e7ddd1;
       box-shadow:var(--shadow);
+      max-width:220px;
     }
-    .dave-frame img{width:100%;height:auto;object-fit:contain;object-position:center top}
+    .dave-frame img{width:100%;aspect-ratio:.9/1;object-fit:cover;object-position:center 18%}
 
     .working{background:var(--cream)}
     .working h2{max-width:14ch}
@@ -489,7 +490,7 @@
       .benefits{grid-template-columns:1fr}
       .strategy-image{min-height:0}
       .about-grid{grid-template-columns:1fr}
-      .dave-frame{max-width:280px;margin-inline:auto;border-radius:0}
+      .dave-frame{max-width:200px;margin-inline:auto}
       .work-grid{grid-template-columns:1fr}
       .working h2{max-width:none}
       .work-close{margin-top:18px}
